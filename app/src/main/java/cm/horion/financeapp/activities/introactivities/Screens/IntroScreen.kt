@@ -1,4 +1,4 @@
-package cm.horion.financeapp.Activities.IntroActivities.Screens
+package cm.horion.financeapp.activities.introactivities.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -72,7 +72,7 @@ fun IntroScreen (
                     width = 2.dp,
                     shape = RoundedCornerShape(12.dp),
                     brush = Brush.linearGradient(
-                        colors = listOf(Color.Cyan, Color.Blue)
+                        colors = listOf(Color.White, Color.Blue)
                     )                )
                 .background(
                     color = Color.Transparent,

@@ -1,4 +1,4 @@
-package cm.horion.financeapp.Activities.IntroActivities
+package cm.horion.financeapp.activities.introactivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-
-import cm.horion.financeapp.Activities.IntroActivities.Screens.IntroScreen
-import cm.horion.financeapp.MainActivity
+import cm.horion.financeapp.activities.dashboardActivity.MainActivity
+import cm.horion.financeapp.activities.introactivities.Screens.IntroScreen
 
 class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
