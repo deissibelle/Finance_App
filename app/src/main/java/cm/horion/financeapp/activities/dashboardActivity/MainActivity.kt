@@ -1,21 +1,28 @@
 package cm.horion.financeapp.activities.dashboardActivity
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import cm.horion.financeapp.R
+import androidx.activity.viewModels
+import cm.horion.financeapp.activities.dashboardActivity.screens.MainScreen
+import cm.horion.financeapp.ui.theme.Finance_AppTheme
+import cm.horion.financeapp.viewmodel.mainViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
+    private val mainViewModel: mainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main2)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContent{
+            Finance_AppTheme {
+                MainScreen(
+                    expenses = mainViewModel.loadData(), onCardClick = {
+
+                    }
+                )
+            }
+
         }
     }
 }

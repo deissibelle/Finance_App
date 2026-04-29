@@ -45,25 +45,25 @@ fun ExpenseItem(item: ExpenseDomain) {
 
     ){
         val context = LocalContext.current
-           val resId = context.resources.getIdentifier(
+
+        val resId = context.resources.getIdentifier(
             item.pic,
             "drawable",
             context.packageName
         )
-       Image(
-           painter= painterResource(context.resources.getIdentifier(
-               item.pic,
-               "drawable",
-               context.packageName
-           )),
-               contentDescription = null,
-           modifier = Modifier
-               .padding(8.dp)
-               .size(55.dp)
-               .clip(RoundedCornerShape(12.dp))
-               .background(colorResource(R.color.lightBlue))
-               .padding(12.dp)
-           )
+
+        Image(
+            painter = painterResource(
+                id = if (resId != 0) resId else R.drawable.cinema
+            ),
+            contentDescription = null,
+            modifier = Modifier
+                .padding(8.dp)
+                .size(55.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(colorResource(R.color.lightBlue))
+                .padding(12.dp)
+        )
         Column(
             modifier = Modifier
                 .weight(1f )
@@ -87,13 +87,3 @@ fun ExpenseItem(item: ExpenseDomain) {
     }
 }
 
-@Preview
-@Composable
-private fun ExpenseItemPreview() {
-    val expense =  ExpenseDomain(title = "Spotify", price = 12.0, pic = "cat_1", time ="10:00"
-    )
-        ExpenseItem(
-            item = expense
-        )
-
-}

@@ -3,7 +3,7 @@ package cm.horion.financeapp.viewmodel
 import androidx.lifecycle.ViewModel
 import cm.horion.financeapp.repository.MainRepository
 
-class MainViewModel (
+class mainViewModel (
     val repository: MainRepository
 ): ViewModel(){
     constructor():this(MainRepository())
