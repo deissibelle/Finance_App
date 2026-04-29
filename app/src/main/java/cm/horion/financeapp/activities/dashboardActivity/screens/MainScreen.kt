@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import cm.horion.financeapp.activities.dashboardActivity.components.ActionButtonRow
 import cm.horion.financeapp.activities.dashboardActivity.components.CardSection
 import cm.horion.financeapp.activities.dashboardActivity.components.HeaderSection
 import cm.horion.financeapp.domain.ExpenseDomain
@@ -38,6 +39,7 @@ fun MainScreen(
         ){
             item { HeaderSection() }
             item { CardSection(onclick = onCardClick) }
+            item { ActionButtonRow() }
 
         }
     }
